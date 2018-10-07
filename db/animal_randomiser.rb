@@ -85,6 +85,14 @@ end
 
 class PetAge
   def self.all()
-    return rand(1..12)
+    return rand(1..16)
+  end
+end
+
+class PetArrival
+  def self.all()
+    day = rand(1..30)
+    month = rand(01..12)
+    return "2018-#{month}-#{day}"
   end
 end

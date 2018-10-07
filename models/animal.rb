@@ -19,8 +19,17 @@ class Animal
   # def delete()
   #
   # end
-  #
-  # def save()
-  #
-  # end
+
+  def save()
+    sql = "
+      INSERT INTO animals
+      (name,species,age,arrival_date)
+      VALUES
+      ($1,$2,$3,$4)
+      RETURNING id
+    ";
+    values = [@name,@species,@age,@arrival_date]
+    results = SqlRunner.run(sql,values)
+    @id = results.first()['id'].to_i
+  end
 end

@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS adoptions;
 DROP TABLE IF EXISTS animals;
-DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS customers;
 -- DROP TABLE IF EXISTS training_log;
 -- DROP TABLE IF EXISTS training;
 -- DROP TABLE IF EXISTS staff;
@@ -11,7 +11,8 @@ CREATE TABLE animals(
   name VARCHAR(255),
   species VARCHAR(255),
   age INT2,
-  arrival_date DATE
+  arrival_date DATE,
+  photo VARCHAR(255)
 );
 
 CREATE TABLE customers(

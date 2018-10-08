@@ -1,0 +1,10 @@
+td {
+  border:1px solid black;
+  text-align:center;
+  padding:15px;
+}
+
+td img {
+  max-width:250px;
+  max-height:250px;
+}

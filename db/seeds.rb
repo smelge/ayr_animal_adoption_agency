@@ -15,11 +15,13 @@ animal_loop = 1
 customer_loop = 1
 
 while animal_loop <= 25
+  species = PetSpecies.all.sample
   new_animal = Animal.new({
     'name'=> PetName.all.sample,
-    'species'=> PetSpecies.all.sample,
+    'species'=> species,
     'age'=> PetAge.all,
     'arrival_date'=> PetArrival.all,
+    'photo'=> PetPhoto.picture(species)
   })
 
   new_animal.save()

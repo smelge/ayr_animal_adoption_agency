@@ -32,4 +32,8 @@ class Animal
     results = SqlRunner.run(sql,values)
     @id = results.first()['id'].to_i
   end
+
+  # def update()
+  #
+  # end
 end

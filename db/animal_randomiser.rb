@@ -96,3 +96,90 @@ class PetArrival
     return "2018-#{month}-#{day}"
   end
 end
+
+class ForeNamer
+  def self.all()
+    return [
+      "Aaron",
+      "Carl",
+      "Dave",
+      "Edward",
+      "Fredricka",
+      "Gary",
+      "Hela",
+      "Iodine",
+      "Jerry",
+      "Karen",
+      "Lemon",
+      "Murray",
+      "Norbert",
+      "Oprah",
+      "Percival",
+      "Rhian",
+      "Sharon",
+      "Trevor",
+      "Vivian",
+      "William",
+      "Paul",
+      "Grif",
+      "Debra",
+      "Slim",
+      "Ben",
+      "Celery",
+      "Drama",
+      "Twiglet",
+      "Terry",
+      "George",
+      "Manfred",
+      "Claire",
+      "Henry",
+      "Bovril",
+      "Sally",
+      "Barry",
+      "Jeff",
+      "Louise",
+      "Jacob",
+      "Fred"
+    ]
+  end
+end
+
+class SurNamer
+  def self.all
+    return [
+      "Man",
+      "Shutters",
+      "Curtain",
+      "Sticks",
+      "Bricklayer",
+      "Skoda",
+      "Feely",
+      "Squiggles",
+      "Flan",
+      "Arm-bandage",
+      "Shuttleworth",
+      "Barny",
+      "Ferguson",
+      "Clarkson",
+      "Soup",
+      "Gronk",
+      "Pteranodon",
+      "Hippy",
+      "Pain",
+      "Laserexplosion",
+      "Portaloo",
+      "Tiles",
+      "Cunk",
+      "Schmarm",
+      "Field",
+      "Butter",
+      "Cake",
+      "Eggs",
+      "Upset",
+      "Woodmonger",
+      "Klaarg",
+      "Details",
+      "Bjornsson"
+    ]
+  end
+end

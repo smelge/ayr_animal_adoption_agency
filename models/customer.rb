@@ -18,7 +18,20 @@ class Customer
   #
   # end
   #
-  # def save()
+  def save()
+    sql = "
+      INSERT INTO customers
+      (first_name,last_name)
+      VALUES
+      ($1,$2)
+      RETURNING id
+    "
+    values = [@first_name,@last_name]
+    results = SqlRunner.run(sql,values)
+    @id = results.first()['id'].to_i
+  end
+
+  # def update()
   #
   # end
 end

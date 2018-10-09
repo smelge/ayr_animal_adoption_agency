@@ -34,4 +34,14 @@ class Customer
   # def update()
   #
   # end
+
+  def self.all()
+    sql = "SELECT * FROM customers"
+    result = SqlRunner.run(sql)
+    return result.map{|person| Customer.new(person)}
+  end
+
+  def self.fullname()
+    return "#{@first_name} #{@last_name}"
+  end
 end

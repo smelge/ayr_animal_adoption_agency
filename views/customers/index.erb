@@ -1,0 +1,26 @@
+list of customers
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pets</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% for person in @peoples %>
+    <tr>
+      <td><%= person.first_name %> <%= person.last_name %></td>
+      <td>#</td>
+      <td>
+        <form action="/customers/<%= person.id %>/edit" method="GET">
+          <input class="" type="submit" value="Edit" />
+        </form>
+      </td>
+      <td>
+        <form action="/customers/<%= person.id %>/delete" method="POST">
+          <input class="" type="submit" value="Delete" />
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,1 +1,5 @@
-EDIT PAGE
+<form class="" action="/customers/<%= @customer.id %>/change" method="post">
+  <input type="text" name="first_name" value="<%= @customer.first_name %>" placeholder="First Name">
+  <input type="text" name="last_name" value="<%= @customer.last_name %>" placeholder="Last Name">
+  <input type="submit" value="Update Information">
+</form>

@@ -20,6 +20,19 @@ post '/customers/new' do
   redirect to("/people")
 end
 
+post '/customers/:id/change' do
+  change_guy = Customer.new(params)
+  change_guy.update()
+  redirect to("/people")
+end
+
 get '/customers/:id/edit' do
+  @customer = Customer.find(params[:id].to_i)
   erb(:"customers/edit")
+end
+
+post '/customers/:id/delete' do
+  target = Customer.find(params[:id].to_i)
+  target.delete()
+  redirect to("/people")
 end

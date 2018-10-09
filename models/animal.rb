@@ -17,9 +17,10 @@ class Animal
     SqlRunner.run(sql)
   end
 
-  # def delete()
-  #
-  # end
+  def delete()
+    sql = "DELETE FROM animals WHERE id = $1"
+    SqlRunner.run(sql,[@id])
+  end
 
   def save()
     sql = "
@@ -40,7 +41,18 @@ class Animal
     return results.map{|result| Animal.new(result)}
   end
 
-  # def update()
-  #
-  # end
+  def self.find(id)
+    sql = "SELECT * FROM animals WHERE id = $1"
+    result = SqlRunner.run(sql,[id])
+    return Animal.new(result.first)
+  end
+
+  def update()
+    sql = "UPDATE animals
+    SET
+    (name,species,age,photo) = ($1,$2,$3,$4)
+    WHERE id = $5"
+    values = [@name, @species,@age,@photo, @id]
+    SqlRunner.run( sql, values )
+  end
 end

@@ -1,0 +1,7 @@
+<form class="" action="/animals/<%= @animal.id %>/change" method="post">
+  <input type="text" name="name" value="<%= @animal.name %>" placeholder="Pet Name">
+  <input type="number" min="0" name="age" value="<%= @animal.age %>" placeholder="Age">
+  <input type="text" name="photo" value="<%= @animal.photo %>" placeholder="Profile Picture">
+  <input type="hidden" name="species" value="<%= @animal.species %>">
+  <input type="submit" value="Update Information">
+</form>

@@ -3,7 +3,7 @@ Main Page for pets
 <table>
   <tr>
     <td colspan="5">New Pet!</td>
-    <td>
+    <td colspan="2">
       <form action="/animals/new" method="GET">
         <input class="" type="submit" value="Add Pet to List" />
       </form>
@@ -15,6 +15,7 @@ Main Page for pets
     <th>Species</th>
     <th>Age</th>
     <th>Adopt!</th>
+    <th>Edit</th>
     <th>"Send Away"</th>
   </tr>
   <% for pet in @pets %>
@@ -23,6 +24,11 @@ Main Page for pets
       <td><%= pet.name %></td>
       <td><%= pet.species %></td>
       <td><%= pet.age %></td>
+      <td>
+        <form action="/animals/<%= pet.id %>/adopt" method="GET">
+          <input class="" type="submit" value="Adopt ME!" />
+        </form>
+      </td>
       <td>
         <form action="/animals/<%= pet.id %>/edit" method="POST">
           <input class="" type="submit" value="Edit" />

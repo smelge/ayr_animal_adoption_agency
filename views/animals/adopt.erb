@@ -1,0 +1,12 @@
+Adoption page<br>
+<%= @pet.name %>
+<hr>
+<form class="" action="/animals/adopt" method="post">
+  <input type="hidden" name="animal_id" value="<%= @pet.id %>">
+  <select class="" name="customer_id">
+    <% for person in @owner %>
+      <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Adopt!">
+</form>

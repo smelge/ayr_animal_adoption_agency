@@ -3,6 +3,8 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 
 require_relative('../models/animal.rb')
+require_relative('../models/customer.rb')
+require_relative('../models/adopt.rb')
 also_reload( '../models/*' )
 
 get '/pets' do
@@ -35,4 +37,16 @@ post '/animals/add' do
   @new_pet = Animal.new(params)
   @new_pet.save()
   redirect to ("/pets")
+end
+
+get '/animals/:id/adopt' do
+  @pet = Animal.find(params[:id].to_i)
+  @owner = Customer.all
+  erb(:"animals/adopt")
+end
+
+post '/animals/adopt' do
+  @adopt = Adopt.new(params)
+  @adopt.save()
+  redirect to ("../adopts")
 end

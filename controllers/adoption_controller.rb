@@ -8,5 +8,6 @@ require_relative('../models/adopt.rb')
 also_reload( '../models/*' )
 
 get '/adopts' do
+  @adopts = Adopt.all
   erb(:"/adopts/index")
 end

@@ -12,6 +12,25 @@ class Animal
     @photo = options['photo']
   end
 
+  def adoptor(id)
+    sql = "
+      SELECT customers.first_name,customers.last_name
+      FROM customers
+      INNER JOIN adoptions
+      ON adoptions.customer_id = customers.id
+      INNER JOIN animals
+      ON animals.id = adoptions.animal_id
+      WHERE animals.id = $1
+    "
+    result = SqlRunner.run(sql,[id])
+    return result.map{|person| Customer.new(person)}
+  end
+
+  def self.adopted(id)
+    sql = "SELECT id FROM adoptions WHERE animal_id = $1"
+    return SqlRunner.run(sql,[id]).count
+  end
+
   def self.delete_all()
     sql = "DELETE FROM animals"
     SqlRunner.run(sql)

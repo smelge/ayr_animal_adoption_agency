@@ -28,7 +28,9 @@ class Adopt
     SqlRunner.run(sql)
   end
 
-  # def delete()
-  #
-  # end
+  def self.all()
+    sql = "SELECT * FROM adoptions"
+    result = SqlRunner.run(sql)
+    return result.map{|data| Adopt.new(data)}
+  end
 end

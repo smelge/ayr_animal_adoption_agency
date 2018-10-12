@@ -1,1 +1,19 @@
 Adopts List
+
+<table>
+  <tr>
+    <th>Pet</th>
+    <th>Adoptor</th>
+    <th>Date Adopted</th>
+  </tr>
+  <% for adopt in @adopts %>
+    <tr>
+      <td><%= Animal.find(adopt.animal_id).name %></td>
+      <td>
+        <%= Customer.find(adopt.customer_id).first_name %>
+        <%= Customer.find(adopt.customer_id).last_name %>
+      </td>
+      <td><%= adopt.adopt_date %></td>
+    </tr>
+  <% end %>
+</table>

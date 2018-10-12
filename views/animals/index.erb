@@ -25,9 +25,13 @@ Main Page for pets
       <td><%= pet.species %></td>
       <td><%= pet.age %></td>
       <td>
-        <form action="/animals/<%= pet.id %>/adopt" method="GET">
-          <input class="" type="submit" value="Adopt ME!" />
-        </form>
+        <% if Animal.adopted(pet.id) == 0  %>
+          <form action="/animals/<%= pet.id %>/adopt" method="GET">
+            <input class="" type="submit" value="Adopt ME!" />
+          </form>
+        <% else %>
+          Sorry, I've been Adopted!
+        <% end %>
       </td>
       <td>
         <form action="/animals/<%= pet.id %>/edit" method="POST">
